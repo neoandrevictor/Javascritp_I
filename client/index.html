@@ -62,18 +62,12 @@
   <script>
 
     var n1 = new Negociacao(new Date(), 5, 700);
-    var volume = n1.obtemVolume();
-    console.log(n1);
-    console.log(volume);
+    console.log(n1.getData())
+    console.log(n1.getQuantidade())
+    console.log(n1.getValor())
+    console.log(n1.getVolume())
 
-    var n2 = new Negociacao();
-    n2.quantidade = 20;
-    console.log(n2);
-
-
-
-
-  </script>
+</script>
 </body>
 
 </html>
