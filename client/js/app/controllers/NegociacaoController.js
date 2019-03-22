@@ -3,24 +3,20 @@ class NegociacaoController {
   constructor(){
     let $ = document.querySelector.bind(document);
 
-    this.inputData = $('#data')
-    this.inputQuantidade = $('#quantidade')
-    this.inputValor= $('#valor')
+    this._inputData = $('#data')
+    this._inputQuantidade = $('#quantidade')
+    this._inputValor= $('#valor')
   }
 
   adiciona(event){
     event.preventDefault();
 
-    const helper = new DateHelper();
-
-    let data = helper.textoParaData(this.inputData.value);
-
     let negociacao = new Negociacao (
-      data,
-      this.inputQuantidade.value,
-      this.inputValor.value
+      DateHelper.textoParaData(this._inputData.value),
+      this._inputQuantidade.value,
+      this._inputValor.value
     );
     console.log(negociacao)
-    console.log(helper.dataParaTexto(negociacao._data));
+    console.log(DateHelper.dataParaTexto(negociacao._data));
   }
 }
